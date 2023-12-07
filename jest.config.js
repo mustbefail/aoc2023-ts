@@ -14,7 +14,6 @@ function makeModuleNameMapper(srcPath, tsconfigPath) {
   return aliases
 }
 
-const TS_CONFIG_PATH = './tsconfig.json'
 const SRC_PATH = '<rootDir>'
 module.exports = {
   transform: {
@@ -23,6 +22,5 @@ module.exports = {
   testEnvironment: 'node',
   testRegex: './tests/.*\\.(test|spec)?\\.(ts|ts)$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-  moduleNameMapper: makeModuleNameMapper(SRC_PATH, TS_CONFIG_PATH),
   roots: ['<rootDir>/src/tests', SRC_PATH],
 }
