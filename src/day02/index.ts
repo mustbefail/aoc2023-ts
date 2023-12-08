@@ -36,7 +36,7 @@ export function partTwo(inputPath: PathLike): number {
     .reduce((sum, { red, green, blue }) => (sum += red * green * blue), 0)
 }
 
-function readInput(inputPath: PathLike): string[] {
+export function readInput(inputPath: PathLike): string[] {
   return readFileSync(inputPath, 'utf-8').trim().split('\n')
 }
 

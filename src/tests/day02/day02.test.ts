@@ -1,4 +1,3 @@
-import { readFileSync } from 'fs'
 import path from 'node:path'
 import { partOne, partTwo } from '../../day02'
 
