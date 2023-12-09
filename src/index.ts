@@ -39,7 +39,7 @@ const ANSWERS = {
   ],
   day03: [
     (path: PathLike) => day03.partOne(path),
-    // (path: PathLike) => day03.partTwo(path),
+    (path: PathLike) => day03.partTwo(path),
   ],
 }
 // eslint-disable-next-line
