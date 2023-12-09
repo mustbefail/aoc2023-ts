@@ -2,6 +2,7 @@ import { PathLike } from 'fs'
 import trebuchet from './day01'
 import * as day02 from './day02'
 import * as day03 from './day03'
+import * as day04 from './day04'
 import { inputs } from './inputs'
 
 type Day =
@@ -41,6 +42,10 @@ const ANSWERS = {
     (path: PathLike) => day03.partOne(path),
     (path: PathLike) => day03.partTwo(path),
   ],
+  day04: [
+    (path: PathLike) => day04.partOne(path),
+    (path: PathLike) => day04.partTwo(path),
+  ],
 }
 // eslint-disable-next-line
 function getDayAnswer(day: Day): number {
@@ -60,3 +65,4 @@ function getDayAnswer(day: Day): number {
 // console.log(getDayAnswer('day01'))
 // console.log(getDayAnswer('day02'))
 // console.log(getDayAnswer('day03'))
+// console.log(getDayAnswer('day04'))
