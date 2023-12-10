@@ -65,4 +65,4 @@ function getDayAnswer(day: Day): number {
 // console.log(getDayAnswer('day01'))
 // console.log(getDayAnswer('day02'))
 // console.log(getDayAnswer('day03'))
-// console.log(getDayAnswer('day04'))
+console.log(getDayAnswer('day04'))
