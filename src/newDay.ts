@@ -22,7 +22,7 @@ function addCodeFiles(dayNumber: number) {
       writeFile(`${folderPath}/dayInput${dayNumber}.txt`, '').catch((e) => console.error(e))
     }).catch((e) => console.error(e))
     mkdir(testsPath, { recursive: true }).then(() => {
-      writeFile(`${testsPath}/day${dayNumber}.tests.ts`, '').catch((e) => console.error(e))
+      writeFile(`${testsPath}/day${dayNumber}.test.ts`, '').catch((e) => console.error(e))
     }).catch((e) => console.error(e))
     mkdir(mockupsPath, { recursive: true }).then(() => {
       writeFile(`${mockupsPath}/input.txt`, '',).catch((e) => console.error(e))

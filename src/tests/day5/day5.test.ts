@@ -12,6 +12,6 @@ describe('== Day 5 == Part One', () => {
 describe('== Day 5 == Part Two', () => {
   test('it should return 46', () => {
     const filePath = path.resolve(__dirname, './mockups/input.txt')
-    expect(partTwo(filePath)).toBe(35)
+    expect(partTwo(filePath)).toBe(46)
   })
 })
