@@ -39,6 +39,14 @@
         "allowMultiplePropertiesPerLine": true
       }
     ],
+    "@stylistic/indent": ["error", 2],
+    "@stylistic/array-bracket-newline": ["error", {
+      "minItems": 2
+    }],
+    "@stylistic/array-element-newline": ["error", {
+      "multiline": true,
+      "minItems": 2
+    }],
     "@stylistic/object-curly-spacing": ["error", "always"],
     "@stylistic/space-infix-ops": ["error"],
     "@stylistic/no-multi-spaces": ["error"],
@@ -51,7 +59,6 @@
         "ObjectPattern": {
           "multiline": true
         },
-        "ImportDeclaration": "never",
         "ExportDeclaration": {
           "multiline": true,
           "minProperties": 3

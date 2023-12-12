@@ -4,6 +4,8 @@
   "description": "Advent of code 2023",
   "main": "index.js",
   "scripts": {
+    "initDay": "npx ts-node ./src/newDay.ts",
+    "results": "npx ts-node ./src/index.ts",
     "build": "rimraf ./build && tsc",
     "dev": "npx nodemon",
     "start": "npm run build && node build/index.js",

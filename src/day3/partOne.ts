@@ -1,5 +1,5 @@
-import { PathLike } from "fs"
-import { readInput } from "../day02"
+import { PathLike } from 'fs'
+import { readInput } from '../day2'
 
 interface NumberInfo {
   fIndex: number,
@@ -9,29 +9,36 @@ interface NumberInfo {
 
 export const isSymbol = (char: string): boolean => new RegExp(/[^a-z.0-9]/).test(char)
 export const isNumber = (char: string): boolean => !isNaN(parseInt(char))
-const isContainsSymbols = (line: string): boolean => line ? line.split("").some(isSymbol) : false
+const isContainsSymbols = (line: string): boolean => line ? line.split('').some(isSymbol) : false
 const isNumbersInLine = (arrSlice: string[]): boolean => arrSlice.some(isNumber)
 
 const findNumberInfo = (line: string): NumberInfo[] => {
-  return line.split("").reduce((numInfo, char, charIndex, array) => {
+  return line.split('').reduce((numInfo, char, charIndex, array) => {
     const currentNumber = numInfo.length - 1
     if(isNumber(char)) {
       if(!isNumber(array[charIndex - 1])) {
-        numInfo[currentNumber]["fIndex"] = charIndex
-        numInfo[currentNumber]["touch"] = isSymbol(array[charIndex - 1])
+        numInfo[currentNumber]['fIndex'] = charIndex
+        numInfo[currentNumber]['touch'] = isSymbol(array[charIndex - 1])
       }
       if(!isNumber(array[charIndex + 1])) {
-        numInfo[currentNumber]["lIndex"] = charIndex
-        if(!numInfo[currentNumber]["touch"]) {
-          numInfo[currentNumber]["touch"] = isSymbol(array[charIndex + 1])
+        numInfo[currentNumber]['lIndex'] = charIndex
+        if(!numInfo[currentNumber]['touch']) {
+          numInfo[currentNumber]['touch'] = isSymbol(array[charIndex + 1])
         }
       }
     }
     if(isNumbersInLine(array.slice(charIndex)) && numInfo[currentNumber].fIndex >= 0 && numInfo[currentNumber].lIndex >= 0) {
-      return [...numInfo, { fIndex: -1, lIndex: -1, touch: false }]
+      return [
+        ...numInfo,
+        {
+          fIndex: -1, lIndex: -1, touch: false,
+        },
+      ]
     }
     return numInfo
-  }, [{ fIndex: -1, lIndex: -1, touch: false }] as NumberInfo[])
+  }, [{
+    fIndex: -1, lIndex: -1, touch: false,
+  }] as NumberInfo[])
 }
 
 export default function partOne(input: PathLike): number {
@@ -53,7 +60,10 @@ export default function partOne(input: PathLike): number {
           const prevLineSlice = rawLines[lineIndex - 1]?.slice(sliceIndexStart, sliceIndexEnd)
           const nextLineSlice = rawLines[lineIndex + 1]?.slice(sliceIndexStart, sliceIndexEnd)
 
-          return [prevLineSlice, nextLineSlice].some(isContainsSymbols)
+          return [
+            prevLineSlice,
+            nextLineSlice,
+          ].some(isContainsSymbols)
             ? sum + number
             : sum
         }, 0)

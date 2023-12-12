@@ -26,22 +26,22 @@ function findFirstAndLastNumbers(inputString: string): string {
   let firstNumber, lastNumber
   const lastCharIdx = inputString.length - 1
 
-  for (let i = 0; i <= inputString.length; i += 1) {
-    if (!firstNumber) {
-      if (!firstNumber && isNumeric(inputString[i])) {
+  for(let i = 0; i <= inputString.length; i += 1) {
+    if(!firstNumber) {
+      if(!firstNumber && isNumeric(inputString[i])) {
         firstNumber = inputString[i]
       } else {
         firstNumber = convertToDigit(inputString.slice(0, i + 1))
       }
     }
-    if (!lastNumber) {
-      if (isNumeric(inputString[lastCharIdx - i])) {
+    if(!lastNumber) {
+      if(isNumeric(inputString[lastCharIdx - i])) {
         lastNumber = inputString[lastCharIdx - i]
       } else {
         lastNumber = convertToDigit(inputString.slice(-i - 1))
       }
     }
-    if (firstNumber && lastNumber) {
+    if(firstNumber && lastNumber) {
       break
     }
   }

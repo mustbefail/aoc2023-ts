@@ -1,5 +1,5 @@
 import { PathLike } from 'fs'
-import { readInput } from '../day02'
+import { readInput } from '../day2'
 import { Card, getIntersections, parseCard } from './partOne'
 
 interface Map {
@@ -31,5 +31,3 @@ export default function partTwo(path: PathLike): number {
 
   return Object.values(mappedCards).reduce((a, b) => a + b)
 }
-
-partTwo('/home/codelance/projects/aoc/src/day04/day04Input.txt')

@@ -1,5 +1,5 @@
 import { PathLike } from 'fs'
-import { readInput } from '../day02'
+import { readInput } from '../day2'
 
 export interface Card {
   id: number,
@@ -12,9 +12,17 @@ export interface Card {
 
 
 export function parseCard(rawCard: string): Card {
-  const [cardName, numbers] = rawCard.split(':')
-  const [, id] = cardName.split(' ').filter(Boolean)
-  const [winningSeq, cardSeq] = numbers.split('|')
+  const [
+    cardName,
+    numbers,
+  ] = rawCard.split(':')
+  const [
+    , id,
+  ] = cardName.split(' ').filter(Boolean)
+  const [
+    winningSeq,
+    cardSeq,
+  ] = numbers.split('|')
   const wNumbers = winningSeq.trim().split(' ').filter(Boolean).map(Number)
   const cNumbers = cardSeq.trim().split(' ').filter(Boolean).map(Number)
 
@@ -56,5 +64,5 @@ export default function partOne(path: PathLike): number {
   return readInput(path).map(parseCard).map(countPoints).reduce(countScratchcards, 0)
 }
 
-// partOne('/home/codelance/projects/aoc/src/day04/day04Input.txt')
+// partOne('/home/codelance/projects/aoc/src/day4/day4Input.txt')
 

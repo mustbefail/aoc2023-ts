@@ -1,7 +1,7 @@
 import path from 'node:path'
-import trebuchet from '../../day01'
+import trebuchet from '../../day1'
 
-describe('day01', () => {
+describe('day1', () => {
   test('should return 142', () => {
     const filePath = path.resolve(__dirname, 'mockups/code.txt')
     expect(trebuchet(filePath)).toBe(142)

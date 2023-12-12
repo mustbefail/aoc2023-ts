@@ -1,4 +1,4 @@
-import { partOne, partTwo } from '../../day04'
+import { partOne, partTwo } from '../../day4'
 import path from 'node:path'
 
 

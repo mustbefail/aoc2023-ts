@@ -1,20 +1,22 @@
 import { PathLike } from 'fs'
-import trebuchet from './day01'
-import * as day02 from './day02'
-import * as day03 from './day03'
-import * as day04 from './day04'
+import { argv } from 'process'
+import trebuchet from './day1'
+import * as day2 from './day2'
+import * as day3 from './day3'
+import * as day4 from './day4'
+import * as day5 from './day5'
 import { inputs } from './inputs'
 
 type Day =
-  | 'day01'
-  | 'day02'
-  | 'day03'
-  | 'day04'
-  | 'day05'
-  | 'day06'
-  | 'day07'
-  | 'day08'
-  | 'day09'
+  | 'day1'
+  | 'day2'
+  | 'day3'
+  | 'day4'
+  | 'day5'
+  | 'day6'
+  | 'day7'
+  | 'day8'
+  | 'day9'
   | 'day10'
   | 'day11'
   | 'day12'
@@ -32,37 +34,64 @@ type Day =
   | 'day24'
   | 'day25'
 
+interface Answer {
+  partOne: number,
+  partTwo: number
+}
+
 const ANSWERS = {
-  day01: (path: PathLike) => trebuchet(path),
-  day02: [
-    (path: PathLike) => day02.partOne(path),
-    (path: PathLike) => day02.partTwo(path),
+  day1: [
+    () => `missed`,
+    (path: PathLike) => trebuchet(path),
   ],
-  day03: [
-    (path: PathLike) => day03.partOne(path),
-    (path: PathLike) => day03.partTwo(path),
+  day2: [
+    (path: PathLike) => day2.partOne(path),
+    (path: PathLike) => day2.partTwo(path),
   ],
-  day04: [
-    (path: PathLike) => day04.partOne(path),
-    (path: PathLike) => day04.partTwo(path),
+  day3: [
+    (path: PathLike) => day3.partOne(path),
+    (path: PathLike) => day3.partTwo(path),
+  ],
+  day4: [
+    (path: PathLike) => day4.partOne(path),
+    (path: PathLike) => day4.partTwo(path),
+  ],
+  day5: [
+    (path: PathLike) => day5.partOne(path),
+    (path: PathLike) => day5.partTwo(path),
   ],
 }
+
 // eslint-disable-next-line
-function getDayAnswer(day: Day): number {
+function getDayAnswer(dayNumber: number): Answer {
+  if(isNaN(dayNumber) || dayNumber > 25) {
+    throw new Error(`Invalid day number: ${dayNumber}`)
+  }
+
+  const day = `day${dayNumber}` as Day
+
+
   const inputPath = inputs[day]
 
   // @ts-expect-error wait while it well be 25
   const answerFunc = ANSWERS[day]
 
-  return Array.isArray(answerFunc)
-    ? {
-        partOne: answerFunc[0](inputPath),
-        partTwo: answerFunc[1](inputPath),
-      }
-    : answerFunc(inputPath)
+  return {
+    partOne: answerFunc[0](inputPath),
+    partTwo: answerFunc[1](inputPath),
+  }
 }
 
-// console.log(getDayAnswer('day01'))
-// console.log(getDayAnswer('day02'))
-// console.log(getDayAnswer('day03'))
-console.log(getDayAnswer('day04'))
+const days: Day[] = argv.slice(2) as Day[]
+
+try {
+  days
+    .map((day) => getDayAnswer(parseInt(day)))
+    .forEach(({
+      partOne,
+      partTwo,
+      // eslint-disable-next-line no-console
+    }, index) => console.log(`day ${index + 1} | part one: ${partOne}, part two: ${partTwo}`))
+} catch (e) {
+  console.error(e)
+}

@@ -1,5 +1,5 @@
 import path from 'node:path'
-import { partOne, partTwo } from '../../day03'
+import { partOne, partTwo } from '../../day3'
 
 describe('== DAY 3 == Part One', () => {
   test('it should return 8', () => {

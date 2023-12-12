@@ -1,5 +1,5 @@
 import { PathLike } from 'fs'
-import { readInput } from '../day02'
+import { readInput } from '../day2'
 import { isNumber } from './partOne'
 
 const findFullNumber = (slice: string, seekBack: boolean): string => {
