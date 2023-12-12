@@ -2,6 +2,7 @@
 
 ### To see the solution, uncomment the corresponding ```console.log``` in ```src/index.ts```
 
+Get results: ```yarn results [dayNumber]```
 
 Develop: ```yarn dev ```
 

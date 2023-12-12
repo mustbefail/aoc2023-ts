@@ -5,6 +5,7 @@ import * as day2 from './day2'
 import * as day3 from './day3'
 import * as day4 from './day4'
 import * as day5 from './day5'
+import * as day6 from './day6'
 import { inputs } from './inputs'
 
 type Day =
@@ -59,6 +60,10 @@ const ANSWERS = {
   day5: [
     (path: PathLike) => day5.partOne(path),
     (path: PathLike) => day5.partTwo(path),
+  ],
+  day6: [
+    (path: PathLike) => day6.partOne(path),
+    (path: PathLike) => day6.partTwo(path),
   ],
 }
 
