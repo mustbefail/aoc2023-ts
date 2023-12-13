@@ -6,6 +6,7 @@ import * as day3 from './day3'
 import * as day4 from './day4'
 import * as day5 from './day5'
 import * as day6 from './day6'
+import * as day7 from './day7'
 import { inputs } from './inputs'
 
 type Day =
@@ -41,30 +42,13 @@ interface Answer {
 }
 
 const ANSWERS = {
-  day1: [
-    () => `missed`,
-    (path: PathLike) => trebuchet(path),
-  ],
-  day2: [
-    (path: PathLike) => day2.partOne(path),
-    (path: PathLike) => day2.partTwo(path),
-  ],
-  day3: [
-    (path: PathLike) => day3.partOne(path),
-    (path: PathLike) => day3.partTwo(path),
-  ],
-  day4: [
-    (path: PathLike) => day4.partOne(path),
-    (path: PathLike) => day4.partTwo(path),
-  ],
-  day5: [
-    (path: PathLike) => day5.partOne(path),
-    (path: PathLike) => day5.partTwo(path),
-  ],
-  day6: [
-    (path: PathLike) => day6.partOne(path),
-    (path: PathLike) => day6.partTwo(path),
-  ],
+  day1: [() => `missed`, (path: PathLike) => trebuchet(path)],
+  day2: [(path: PathLike) => day2.partOne(path), (path: PathLike) => day2.partTwo(path)],
+  day3: [(path: PathLike) => day3.partOne(path), (path: PathLike) => day3.partTwo(path)],
+  day4: [(path: PathLike) => day4.partOne(path), (path: PathLike) => day4.partTwo(path)],
+  day5: [(path: PathLike) => day5.partOne(path), (path: PathLike) => day5.partTwo(path)],
+  day6: [(path: PathLike) => day6.partOne(path), (path: PathLike) => day6.partTwo(path)],
+  day7: [(path: PathLike) => day7.partOne(path), (path: PathLike) => day7.partTwo(path)],
 }
 
 // eslint-disable-next-line

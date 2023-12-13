@@ -1,4 +1,5 @@
-import { PathLike, readFileSync } from 'fs'
+import { PathLike } from 'fs'
+import { readInput } from '../utils'
 
 type Color = 'red' | 'green' | 'blue'
 type Cube = [qty: string, color: Color]
@@ -36,25 +37,34 @@ export function partTwo(inputPath: PathLike): number {
     .reduce((sum, { red, green, blue }) => (sum += red * green * blue), 0)
 }
 
-export function readInput(inputPath: PathLike): string[] {
-  return readFileSync(inputPath, 'utf-8').trim().split('\n')
-}
 
 function parseRecord(record: string): Record {
-  const [game, subsets] = record.split(':')
-  const [, gameId] = game.split(' ')
+  const [
+    game,
+    subsets,
+  ] = record.split(':')
+  const [
+    , gameId,
+  ] = game.split(' ')
   const sets = subsets.split(';')
   const maxShowed = sets.reduce(
     (acc, element) => {
       const cubes = element.split(',')
       cubes.forEach((cube) => {
-        const [qty, color] = cube.trim().split(' ') as Cube
+        const [
+          qty,
+          color,
+        ] = cube.trim().split(' ') as Cube
         acc[color] = acc[color] > Number(qty) ? acc[color] : Number(qty)
       })
       return acc
     },
-    { red: 0, green: 0, blue: 0 },
+    {
+      red: 0, green: 0, blue: 0,
+    },
   )
 
-  return { gameId: Number(gameId), ...maxShowed }
+  return {
+    gameId: Number(gameId), ...maxShowed,
+  }
 }

@@ -41,11 +41,11 @@
     ],
     "@stylistic/indent": ["error", 2],
     "@stylistic/array-bracket-newline": ["error", {
-      "minItems": 2
+      "minItems": 3
     }],
     "@stylistic/array-element-newline": ["error", {
       "multiline": true,
-      "minItems": 2
+      "minItems": 3
     }],
     "@stylistic/object-curly-spacing": ["error", "always"],
     "@stylistic/space-infix-ops": ["error"],
@@ -110,7 +110,8 @@
         ]
       }
     ],
-    "no-unused-vars": "error"
+    "@typescript-eslint/no-unused-vars": "error",
+    "no-unused-vars": "off"
   },
   "env": {
     "browser": true,

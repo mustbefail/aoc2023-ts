@@ -1,5 +1,5 @@
 import { PathLike } from 'fs'
-import { readInput } from '../day2'
+import { readInput } from '../utils'
 import { Race } from './partOne'
 
 function getNumber(line: string): number {
