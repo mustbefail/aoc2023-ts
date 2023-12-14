@@ -1,0 +1,4 @@
+import { PathLike } from 'fs'
+export default function partOne(input: PathLike):number {
+  return 0
+}

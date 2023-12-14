@@ -1,0 +1,4 @@
+import partOne from '../day{dayNumber}/partOne'
+import partTwo from '../day{dayNumber}/partTwo'
+
+export { partOne, partTwo }

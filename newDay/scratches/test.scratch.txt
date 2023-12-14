@@ -1,0 +1,16 @@
+import { partOne, partTwo } from '../../day{dayNumber}'
+import path from 'node:path'
+
+describe('== Day {dayNumber} == Part One', () => {
+  test('it should return {result}', () => {
+    const filePath = path.resolve(__dirname, './mockups/input.txt')
+    expect(partOne(filePath)).toBe() //result
+  })
+})
+
+describe('== Day {dayNumber} == Part Two', () => {
+  test('it should return {result}', () => {
+    const filePath = path.resolve(__dirname, './mockups/input.txt')
+    expect(partTwo(filePath)).toBe() //result
+  })
+})
