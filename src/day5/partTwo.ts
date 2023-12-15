@@ -1,6 +1,7 @@
 import { PathLike, readFileSync } from 'fs'
 import { isNumber } from '../day3/partOne'
 import { getValues } from './partOne'
+import { chunk } from '../utils'
 
 interface Map {
   to: number
@@ -26,12 +27,6 @@ interface Almanac {
   humToLocation: Map[]
 }
 
-function chunk<T>(array: T[]): T[][] {
-  return new Array(Math.ceil(array.length / 2)).fill(0).map((_, index) => {
-    return array.slice(index * 2, (index + 1) * 2)
-  })
-}
-
 function serializeMap(path: PathLike): Almanac {
   const map = readFileSync(path, 'utf-8').trim().split('\n\n')
 
@@ -52,10 +47,7 @@ function serializeMap(path: PathLike): Almanac {
   ] = map.slice(1).map(getValues)
 
   return {
-    seeds: chunk(parsedSeeds).map(([
-      seed,
-      range,
-    ]) => ({
+    seeds: chunk(parsedSeeds).map(([seed, range]) => ({
       start: seed,
       end: seed + range - 1,
     })),

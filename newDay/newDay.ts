@@ -1,5 +1,3 @@
-// write script to create new day
-
 import { argv } from 'process'
 import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
@@ -28,7 +26,7 @@ async function addCodeFiles(dayNumber: number) {
       await writeFile(`${folderPath}/index.ts`, day).catch((e) => console.error(e))
       await writeFile(`${folderPath}/partOne.ts`, partOne).catch((e) => console.error(e))
       await writeFile(`${folderPath}/partTwo.ts`, partTwo).catch((e) => console.error(e))
-      await writeFile(`${folderPath}/dayInput${dayNumber}.txt`, '').catch((e) => console.error(e))
+      await writeFile(`${folderPath}/day${dayNumber}Input.txt`, '').catch((e) => console.error(e))
 
       await mkdir(testsPath, { recursive: true })
       await writeFile(`${testsPath}/day${dayNumber}.test.ts`, test).catch((e) => console.error(e))
