@@ -36,16 +36,13 @@
     "@stylistic/object-property-newline": [
       "error",
       {
-        "allowMultiplePropertiesPerLine": true
+        "allowAllPropertiesOnSameLine": false
       }
     ],
     "@stylistic/indent": ["error", 2],
-    "@stylistic/array-bracket-newline": ["error", {
-      "minItems": 3
-    }],
+    "@stylistic/array-bracket-newline": ["error", "consistent"],
     "@stylistic/array-element-newline": ["error", {
-      "multiline": true,
-      "minItems": 3
+      "ArrayExpression": "consistent",
     }],
     "@stylistic/object-curly-spacing": ["error", "always"],
     "@stylistic/space-infix-ops": ["error"],
