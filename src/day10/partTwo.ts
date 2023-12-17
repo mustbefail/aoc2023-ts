@@ -28,11 +28,3 @@ export default function partTwo(input: PathLike):number {
 // That's not the right answer; your answer is too low.
 // Curiously, it's the right answer for someone else;
 // you might be logged in to the wrong account or just unlucky.
-
-console.log(
-  partTwo('/home/codelance/projects/aoc/src/tests/day10/mockups/input.txt'),
-  partTwo('/home/codelance/projects/aoc/src/tests/day10/mockups/input2.txt'),
-  partTwo('/home/codelance/projects/aoc/src/tests/day10/mockups/input3.txt'),
-  partTwo('/home/codelance/projects/aoc/src/tests/day10/mockups/input4.txt'),
-  partTwo('/home/codelance/projects/aoc/src/day10/day10Input.txt')
-)
