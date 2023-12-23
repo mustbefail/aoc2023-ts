@@ -15,3 +15,7 @@ export function chunk<T>(array: T[]): T[][] {
 }
 
 export const sumOfArray = (sum: number, number: number) => sum + number
+
+export function uniq<T>(array: T[]){
+  return Array.from(new Set(array.map((el) => JSON.stringify(el)))).map((el) => JSON.parse(el))
+}

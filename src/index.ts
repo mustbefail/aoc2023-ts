@@ -10,6 +10,7 @@ import * as day7 from './day7'
 import * as day8 from './day8'
 import * as day9 from './day9'
 import * as day10 from './day10'
+import * as day11 from './day11'
 import { inputs } from './inputs'
 
 type Day =
@@ -55,6 +56,7 @@ const ANSWERS = {
   day8: [(path: PathLike) => day8.partOne(path), (path: PathLike) => day8.partTwo(path)],
   day9: [(path: PathLike) => day9.partOne(path), (path: PathLike) => day9.partTwo(path)],
   day10: [(path: PathLike) => day10.partOne(path), (path: PathLike) => day10.partTwo(path)],
+  day11: [(path: PathLike) => day11.partOne(path), (path: PathLike) => day11.partTwo(path)],
 }
 
 // eslint-disable-next-line
